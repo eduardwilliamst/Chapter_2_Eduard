@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".HomeActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/app_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@id/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/logo"
+        tools:srcCompat="@drawable/logo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/app_name"
+        style="@style/TextTitle"
+        app:layout_constraintTop_toBottomOf="@id/app_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/edit_email"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:hint="Nama Customer"
+        style="@style/TextHome"
+        app:layout_constraintBottom_toTopOf="@id/time_options"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textJam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Playing Time:"
+        style="@style/TextHome"
+        app:layout_constraintBottom_toTopOf="@id/time_options"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/edit_email"
+        app:layout_constraintTop_toBottomOf="@id/edit_email" />
+
+    <RadioGroup
+        android:id="@+id/time_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/option_twenty_percent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/button_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/edit_email"
+        app:layout_constraintTop_toBottomOf="@id/textJam">
+
+        <RadioButton
+            android:id="@+id/option_1_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextHome"
+            android:checked="true"
+            android:text="1 Hour" />
+
+        <RadioButton
+            android:id="@+id/option_3_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextHome"
+            android:text="3 Hour" />
+
+        <RadioButton
+            android:id="@+id/option_paket_malam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextHome"
+            android:text="Paket Malam" />
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_login"
+        style="@style/ButtonPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="100dp"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/time_options" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
